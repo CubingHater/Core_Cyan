@@ -3,6 +3,14 @@ from email.mime import message
 import discord
 import os
 import random
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot online"
+
+app.run(host="0.0.0.0", port=10000)
 
 intents = discord.Intents.default()
 intents.message_content = True
